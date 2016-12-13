@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
+using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace WindowsFormsApplication1
 {
@@ -15,6 +18,18 @@ namespace WindowsFormsApplication1
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string json = new WebClient().DownloadString("http://ethpool.org/api/miner_new/9F551A32e971b7B7fa4e1Aa1349bd5dAc1f25F41");
+            Console.WriteLine(json);
+
+            Account acct = JsonConvert.DeserializeObject<Account>(json);
+            Console.WriteLine("Adress: " + acct.address);
+            Console.WriteLine("HashRate: " + acct.hashRate);
+            Console.WriteLine(acct.reportedHashRate);
+            Console.WriteLine(acct.credit);
         }
     }
 }
