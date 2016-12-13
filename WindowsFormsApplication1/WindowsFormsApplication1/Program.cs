@@ -13,9 +13,7 @@ namespace WindowsFormsApplication1
 {
     static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
+      
         [STAThread]
         static void Main()
         {
@@ -30,6 +28,20 @@ namespace WindowsFormsApplication1
         public string address;
         public string hashRate;
         public string reportedHashRate;
-        //public string credits;
+        public List<credits> credit;     
     }
+
+    class credits
+    {
+        public List<test> tes;
+    }
+
+    class test
+    {
+        public string miner;
+        public string credit;
+        public string time;
+    }
+
+  
 }
