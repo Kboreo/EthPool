@@ -26,6 +26,9 @@ namespace WindowsFormsApplication1
             Console.WriteLine(json);
 
             Account acct = JsonConvert.DeserializeObject<Account>(json);
+            addLabel.Text = acct.address;
+            hashLabel.Text = acct.hashRate;
+            reportHashLabel.Text = acct.reportedHashRate;
             Console.WriteLine("Adress: " + acct.address);
             Console.WriteLine("HashRate: " + acct.hashRate);
             Console.WriteLine(acct.reportedHashRate);
