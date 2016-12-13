@@ -25,14 +25,14 @@ namespace WindowsFormsApplication1
             string json = new WebClient().DownloadString("http://ethpool.org/api/miner_new/9F551A32e971b7B7fa4e1Aa1349bd5dAc1f25F41");
             Console.WriteLine(json);
 
+            
+
             Account acct = JsonConvert.DeserializeObject<Account>(json);
             addLabel.Text = acct.address;
             hashLabel.Text = acct.hashRate;
-            reportHashLabel.Text = acct.reportedHashRate;
-            Console.WriteLine("Adress: " + acct.address);
-            Console.WriteLine("HashRate: " + acct.hashRate);
+            reportHashLabel.Text = acct.reportedHashRate;            
             Console.WriteLine(acct.reportedHashRate);
-            Console.WriteLine(acct.credit);
+           // Console.WriteLine(acct.credits);
         }
     }
 }

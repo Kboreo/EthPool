@@ -35,6 +35,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.hashLabel = new System.Windows.Forms.Label();
             this.reportHashLabel = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.creditLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -98,11 +100,30 @@
             this.reportHashLabel.Size = new System.Drawing.Size(0, 13);
             this.reportHashLabel.TabIndex = 6;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 132);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(42, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Credits:";
+            // 
+            // creditLabel
+            // 
+            this.creditLabel.AutoSize = true;
+            this.creditLabel.Location = new System.Drawing.Point(65, 131);
+            this.creditLabel.Name = "creditLabel";
+            this.creditLabel.Size = new System.Drawing.Size(0, 13);
+            this.creditLabel.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(394, 262);
+            this.Controls.Add(this.creditLabel);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.reportHashLabel);
             this.Controls.Add(this.hashLabel);
             this.Controls.Add(this.label3);
@@ -126,6 +147,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label hashLabel;
         private System.Windows.Forms.Label reportHashLabel;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label creditLabel;
     }
 }
 
