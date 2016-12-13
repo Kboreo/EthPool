@@ -32,7 +32,7 @@ namespace WindowsFormsApplication1
             hashLabel.Text = acct.hashRate;
             reportHashLabel.Text = acct.reportedHashRate;            
             Console.WriteLine(acct.reportedHashRate);
-           // Console.WriteLine(acct.credits);
+            //Console.WriteLine(acct.credits);
         }
     }
 }

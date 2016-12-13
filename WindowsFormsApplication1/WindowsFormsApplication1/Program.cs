@@ -30,6 +30,6 @@ namespace WindowsFormsApplication1
         public string address;
         public string hashRate;
         public string reportedHashRate;
-        //public string credits[0];
+        //public string credits;
     }
 }
