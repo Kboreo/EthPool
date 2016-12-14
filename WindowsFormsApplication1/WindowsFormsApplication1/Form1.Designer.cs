@@ -46,7 +46,6 @@
             this.percentComLabel = new System.Windows.Forms.Label();
             this.startTimerButton = new System.Windows.Forms.Button();
             this.stopTimerButton = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.intervalTextBox = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
@@ -183,7 +182,7 @@
             // percentComLabel
             // 
             this.percentComLabel.AutoSize = true;
-            this.percentComLabel.Location = new System.Drawing.Point(144, 159);
+            this.percentComLabel.Location = new System.Drawing.Point(136, 159);
             this.percentComLabel.Name = "percentComLabel";
             this.percentComLabel.Size = new System.Drawing.Size(0, 13);
             this.percentComLabel.TabIndex = 12;
@@ -208,23 +207,14 @@
             this.stopTimerButton.UseVisualStyleBackColor = true;
             this.stopTimerButton.Click += new System.EventHandler(this.stopTimerButton_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(0, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "label6";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(189, 160);
+            this.label7.Location = new System.Drawing.Point(184, 159);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 13);
+            this.label7.Size = new System.Drawing.Size(98, 13);
             this.label7.TabIndex = 16;
-            this.label7.Text = "Refresh Interval:";
+            this.label7.Text = "Refresh Interval(S):";
             // 
             // intervalTextBox
             // 
@@ -241,7 +231,6 @@
             this.ClientSize = new System.Drawing.Size(394, 262);
             this.Controls.Add(this.intervalTextBox);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.stopTimerButton);
             this.Controls.Add(this.startTimerButton);
             this.Controls.Add(this.percentComLabel);
@@ -289,7 +278,6 @@
         private System.Windows.Forms.Label percentComLabel;
         private System.Windows.Forms.Button startTimerButton;
         private System.Windows.Forms.Button stopTimerButton;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox intervalTextBox;
     }

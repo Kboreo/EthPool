@@ -11,6 +11,7 @@ using System.Net;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Timers;
 
 
 namespace WindowsFormsApplication1
@@ -24,7 +25,6 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             string json;        //Value used for parsing JSON data                     
             string creditVal;   //string used for credit value text on form
             double credDouble;  //Double used for the credit value
@@ -49,10 +49,8 @@ namespace WindowsFormsApplication1
             percentComLabel.Text = (perCompDou.ToString() + "%");  // Changes label and adds a percent sign
             Account acct = JsonConvert.DeserializeObject<Account>(json);    //Sets values to the account class             
             addLabel.Text = acct.address;
-            hashLabel.Text = acct.hashRate;          
+            hashLabel.Text = acct.hashRate;
             reportHashLabel.Text = acct.reportedHashRate;
-                        
-
         }
 
 
@@ -62,15 +60,30 @@ namespace WindowsFormsApplication1
             MessageBox.Show("Created by KB Bountyhunter!");
         }
 
-        private void startTimerButton_Click(object sender, EventArgs e)
+        public void startTimerButton_Click(object sender, EventArgs e)
         {
-            intervalTextBox.ReadOnly = true;
-            
+            intervalTextBox.ReadOnly = true;        //Makes textbox read only
+            //while (intervalTextBox.ReadOnly == true)
+            //{                
+            //    int time;  // timer taken from text box.
+
+            //    if (Int32.TryParse(intervalTextBox.Text, out time))
+            //        ;
+            //    else
+            //        MessageBox.Show("An error has occurred, please try again!");
+
+            //    time = time * 1000;
+            //    System.Timers.Timer timer = new System.Timers.Timer();
+            //    timer.Elapsed += new ElapsedEventHandler(button1_Click);
+            //    timer.Interval = time;
+            //    timer.Enabled = true;
+                
+            //}
         }
 
         private void stopTimerButton_Click(object sender, EventArgs e)
         {
-            intervalTextBox.ReadOnly = false;
+            intervalTextBox.ReadOnly = false;                       
         }
     }
 }
