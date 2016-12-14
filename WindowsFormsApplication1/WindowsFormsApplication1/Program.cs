@@ -27,6 +27,6 @@ namespace WindowsFormsApplication1
     {
         public string address;
         public string hashRate;
-        public string reportedHashRate;           
+        public string reportedHashRate;
     }
 }
