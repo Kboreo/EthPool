@@ -27,21 +27,6 @@ namespace WindowsFormsApplication1
     {
         public string address;
         public string hashRate;
-        public string reportedHashRate;
-        public List<credits> credit;     
+        public string reportedHashRate;           
     }
-
-    class credits
-    {
-        public List<test> tes;
-    }
-
-    class test
-    {
-        public string miner;
-        public string credit;
-        public string time;
-    }
-
-  
 }
