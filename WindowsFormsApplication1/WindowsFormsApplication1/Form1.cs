@@ -19,11 +19,11 @@ namespace WindowsFormsApplication1
     public partial class Form1 : Form
     {
         public Form1()
-        {
+        {            
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
             string json;        //Value used for parsing JSON data                     
             string creditVal;   //string used for credit value text on form
@@ -62,28 +62,61 @@ namespace WindowsFormsApplication1
 
         public void startTimerButton_Click(object sender, EventArgs e)
         {
+            string timeStr;
+            int timeInt;
+
             intervalTextBox.ReadOnly = true;        //Makes textbox read only
-            //while (intervalTextBox.ReadOnly == true)
-            //{                
-            //    int time;  // timer taken from text box.
+            System.Timers.Timer aTimer = new System.Timers.Timer();
+            aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+            timeStr = intervalTextBox.Text;
+            timeInt = (Int32.Parse(timeStr) * 1000);            
+            aTimer.Interval = timeInt;
+            aTimer.Enabled = true;
 
-            //    if (Int32.TryParse(intervalTextBox.Text, out time))
-            //        ;
-            //    else
-            //        MessageBox.Show("An error has occurred, please try again!");
-
-            //    time = time * 1000;
-            //    System.Timers.Timer timer = new System.Timers.Timer();
-            //    timer.Elapsed += new ElapsedEventHandler(button1_Click);
-            //    timer.Interval = time;
-            //    timer.Enabled = true;
-                
-            //}
+            while (intervalTextBox.ReadOnly != false) ;           
         }
 
         private void stopTimerButton_Click(object sender, EventArgs e)
         {
-            intervalTextBox.ReadOnly = false;                       
+            intervalTextBox.ReadOnly = false;
+                             
+        }
+
+        private static void OnTimedEvent(object source, ElapsedEventArgs e)
+        {
+            genInfo();
+        }
+
+        private static void genInfo()
+        {
+            MessageBox.Show("Test");
+            //string json1;        //Value used for parsing JSON data                     
+            //string creditVal1;   //string used for credit value text on form
+            //double credDouble1;  //Double used for the credit value
+            //double divisionConst1 = 1000000000000.00;    //Const used to divde credDouble, so total shows like ethpool shows
+            //string wallet1 = "9F551A32e971b7B7fa4e1Aa1349bd5dAc1f25F41"; //Wallet address, hardcoded for now
+            //string jsonStr1; //string used for url
+            //double maxCredit1;  //Max current credits by any user, used to calculate percent complete
+            //double perCompDou1;  //Double used to calculate percentage complted            
+
+            //jsonStr1 = ("http://ethpool.org/api/miner_new/" + wallet1);   //Adds address to url         
+            //json1 = new WebClient().DownloadString(jsonStr1); //downloads JSON as string
+            //JToken token = JToken.Parse(json1);  //Parses the JSON using JToken, so values can be found
+            //credDouble1 = token.SelectToken("credits[0].credit").Value<double>();    //gets value for credit converts it to a double
+            //perCompDou1 = credDouble1;
+            //credDouble1 = (credDouble1 / divisionConst1);  //Divides by the const value to get it to the correct values
+            //creditVal1 = credDouble1.ToString();  //Converts credDouble to a string
+            //creditLabel.Text = creditVal1;   //Changes label text
+
+            //maxCredit1 = token.SelectToken("credits[0].maxCredit").Value<double>(); //Gets value of MaxCredit and converts it to a double
+            //perCompDou1 = ((perCompDou1 / maxCredit1) * 100);      //Calculates percentage
+            //perCompDou1 = System.Math.Round(perCompDou1, 3);  //Rounds Value to only 3 places after decimal
+            //percentComLabel.Text = (perCompDou1.ToString() + "%");  // Changes label and adds a percent sign
+            //Account acct = JsonConvert.DeserializeObject<Account>(json1);    //Sets values to the account class             
+            //addLabel.Text = acct.address;
+            //hashLabel.Text = acct.hashRate;
+            //reportHashLabel.Text = acct.reportedHashRate;
+            //Form1.
         }
     }
 }

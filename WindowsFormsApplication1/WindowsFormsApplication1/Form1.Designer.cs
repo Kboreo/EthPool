@@ -173,7 +173,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(19, 160);
+            this.label5.Location = new System.Drawing.Point(16, 160);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(118, 13);
             this.label5.TabIndex = 11;
@@ -182,7 +182,7 @@
             // percentComLabel
             // 
             this.percentComLabel.AutoSize = true;
-            this.percentComLabel.Location = new System.Drawing.Point(136, 159);
+            this.percentComLabel.Location = new System.Drawing.Point(133, 159);
             this.percentComLabel.Name = "percentComLabel";
             this.percentComLabel.Size = new System.Drawing.Size(0, 13);
             this.percentComLabel.TabIndex = 12;
